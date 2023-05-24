@@ -29,7 +29,7 @@ class ArticleRepository {
     /**
      * Exposed singular stream of [Article] instances
      */
-    val articleStream: Flow<List<Article>> = flowOf(
+    /*val articleStream: Flow<List<Article>> = flowOf(
         (0..500).map { number ->
             Article(
                 id = number,
@@ -38,5 +38,8 @@ class ArticleRepository {
                 created = firstArticleCreatedTime.minusDays(number.toLong())
             )
         }
-    )
+    )*/
+
+
+    fun articlePagingSource() = ArticlePagingSource()
 }
